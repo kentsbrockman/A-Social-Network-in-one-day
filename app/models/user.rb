@@ -4,10 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :email,
-    presence:true,
-    uniqueness: true,
-    format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
+  validates :first_name,
+    presence: true,
+    length: { in: 2..20 }
+  validates :last_name,
+    presence: true,
+    length: { in: 2..20 }
   
   has_many :articles
   has_many :comments

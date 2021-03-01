@@ -17,7 +17,7 @@
       <tr>
         <td><%= article.title %></td>
         <td><%= article.content %></td>
-        <td><%= article.author.email %></td>
+        <td><%= article.author.first_name %> <%= article.author.last_name %></td>
         <td><%= link_to 'Show', article %></td>
         <% if article.author == current_user %>
           <td><%= link_to 'Edit', edit_article_path(article) %></td>

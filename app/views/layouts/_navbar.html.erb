@@ -12,7 +12,9 @@
     <% if user_signed_in? %>
 
       <div class="link_personal_profile mr-2">
-        <%= active_link_to "My profile", user_path(current_user.id), class:"btn btn-light rounded-pill d-flex mx-2" %>
+        <%= active_link_to user_path(current_user.id), class:"btn btn-light rounded-pill d-flex mx-2" do %>
+          <span><strong><%= current_user.first_name %></strong></span>
+        <% end %>
       </div>
 
       <button class="btn btn-light dropdown-toggle rounded-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
@@ -20,7 +22,9 @@
       <div class="dropdown-menu dropdown-menu-right text-left mr-3" aria-labelledby="dropdownMenuButton">
 
         <div class="link_personal_profile">
-          <%= link_to "My profile", user_path(current_user.id), class:"btn btn-light rounded d-flex mx-2" %>
+          <%= active_link_to user_path(current_user.id), class:"btn btn-light rounded d-flex mx-2" do %>
+            <span><strong><%= current_user.first_name %></strong></span>
+          <% end %>
         </div>
 
         <hr/>

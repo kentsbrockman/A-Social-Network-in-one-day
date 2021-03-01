@@ -1,16 +1,24 @@
 <div class="profile_canvas d-flex flex-column align-items-center">
 
-  <h3><%= @user.email %></h3>
+  <img class="img-fluid rounded" src="https://picsum.photos/seed/picsum/1000/400" >
+
+  <h2 class="mt-3"><%= @user.first_name %> <%= @user.last_name %></h2>
+
+  <%if @user.description?%>
+    <div class="text-muted my-2"><%= @user.description %></div>
+  <%else%>
+    <strong class="my-2"><%= link_to "Add Bio", edit_user_path(@user) %></strong>
+  <%end%>
 
   <div class="link_edit_profile">
-    <%= link_to edit_user_path(current_user.id), class:"btn btn-light rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+    <%= link_to edit_user_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
       <i class="fas fa-user mr-2"></i>
       <span>Edit Profile</span>
     <% end %>
   </div>
 
   <div class="link_personal_settings">
-    <%= link_to edit_user_registration_path(current_user.id), class:"btn btn-light rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+    <%= link_to edit_user_registration_path(current_user.id), class:"btn btn-light-custom-profile rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
       <i class="fas fa-cog mr-2"></i>
       <span>Settings & Privacy</span>
     <% end %>

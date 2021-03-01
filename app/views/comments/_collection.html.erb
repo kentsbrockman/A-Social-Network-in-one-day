@@ -4,7 +4,7 @@
   <div class="card my-5">
     <div class="card-header">
       <h6 class="text-info">
-        <%= comment.author.email %>
+        <%= comment.author.first_name %> <%= comment.author.last_name %>
         <span class="text-muted font-italic font-weight-light ml-3"><%= comment.created_at.strftime("%B %d, %Y at %l:%M %P") %></span>
       </h6>
     </div>

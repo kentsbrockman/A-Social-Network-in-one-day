@@ -7,10 +7,10 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 
-import 'stylesheets/bootstrap'
-import 'jquery'
-import 'popper.js'
-import 'bootstrap'
+import "stylesheets/bootstrap"
+import "jquery"
+import "popper.js"
+import "bootstrap"
 
 import "@fortawesome/fontawesome-free/css/all";
 

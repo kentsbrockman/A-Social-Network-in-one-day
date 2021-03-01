@@ -13,7 +13,7 @@ require 'faker'
   last_name = Faker::Name.last_name
   email = "#{first_name}_#{last_name}@mail.com"
   password = "blablabli"
-  User.create(email: email, password: password)
+  User.create(first_name: first_name, last_name: last_name, email: email, password: password)
 end
 
 puts "-------------------- Users table --------------------"

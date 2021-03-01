@@ -10,10 +10,11 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
-    <%= render 'layouts/flash' %>
+    <%= render "layouts/navbar" %>
+    <%= render "layouts/flash" %>
     <main class="container my-5">
       <%= yield %>
     </main>
+    <%= render "layouts/footer" %>
   </body>
 </html>
