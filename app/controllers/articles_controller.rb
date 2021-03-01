@@ -5,12 +5,15 @@ class ArticlesController < ApplicationController
 
   # GET /articles or /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.filter_by_visibility("Public")
   end
 
   # GET /articles/1 or /articles/1.json
   def show
     @article = Article.find(params[:id])
+    if @article.author != current_user
+      @article = Article.filter_by_visibility("Public").find(params[:id])
+    end
     @comment = Comment.new
     @comments = Comment.where(article: @article)
   end
@@ -70,7 +73,7 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :content)
+      params.require(:article).permit(:title, :content, :visibility)
     end
 
     def is_author?

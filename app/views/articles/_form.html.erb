@@ -21,6 +21,11 @@
     <%= form.text_area :content %>
   </div>
 
+  <div class="field">
+    <%= form.label :visibility %>
+    <%= form.select :visibility, ["Public", "Private"] %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

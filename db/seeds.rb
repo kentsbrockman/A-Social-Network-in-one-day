@@ -23,7 +23,8 @@ tp User.all
   title = Faker::Company.bs.capitalize
   content = Faker::Lorem.paragraph
   author = User.all.sample
-  Article.create(title: title, content: content, author: author)
+  visibility = "Public"
+  Article.create(title: title, content: content, author: author, visibility: visibility)
 end
   
 puts "-------------------- Users table --------------------"
