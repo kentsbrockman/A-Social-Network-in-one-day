@@ -1,0 +1,49 @@
+<div class="profile_canvas d-flex flex-column align-items-center">
+
+  <h3><%= @user.email %></h3>
+
+  <div class="link_edit_profile">
+    <%= link_to edit_user_path(current_user.id), class:"btn btn-light rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+      <i class="fas fa-user mr-2"></i>
+      <span>Edit Profile</span>
+    <% end %>
+  </div>
+
+  <div class="link_personal_settings">
+    <%= link_to edit_user_registration_path(current_user.id), class:"btn btn-light rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+      <i class="fas fa-cog mr-2"></i>
+      <span>Settings & Privacy</span>
+    <% end %>
+  </div>
+
+</div>
+
+<hr/>
+
+<div class="container user_articles my-3", style="max-width:400px">
+
+  <% if @articles.length > 0 %>
+
+    <h4 class="text-center">All your articles</h4>
+
+    <% @articles.each do |article| %>
+      <div class="card text-center my-4">
+        <h4 class="card-header text-primary"><%= article.title %></h4>
+        <div class="card-body">
+          <p class="card-text"><%= article.content %></p>
+          <%= link_to "See this article", article_path(article.id), class: "btn btn-primary text-white" %>
+        </div>
+      </div>
+    <% end %>
+    
+  <% else %>
+
+    <div class="article_creation_via_profile d-flex flex-column align-items-center">
+      <h5 class="my-4">You haven't written down any article yet!</h5>
+      <%= link_to "Create your first article", new_article_path, class: "btn btn-primary text-white" %>
+    </div>
+
+  <% end %>
+
+</div>
+

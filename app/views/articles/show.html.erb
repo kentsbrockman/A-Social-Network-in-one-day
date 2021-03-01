@@ -1,0 +1,21 @@
+<h3>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</h3>
+
+<p>
+  <strong>Content:</strong>
+  <%= @article.content %>
+</p>
+
+<% if @article.author == current_user %>
+  <%= link_to "Edit article", edit_article_path(@article), :class => "btn btn-outline-success btn-sm mr-3" %>
+  <%= link_to "Delete", @article, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger btn-sm" %>
+<% end %>
+
+<hr/>
+
+<%= render partial: './comments/form' %>
+<%= render partial: './comments/collection' %>
+
+<%= link_to 'Back', articles_path %>

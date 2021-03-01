@@ -1,0 +1,60 @@
+<!-- Header -->
+  <nav class="navbar navbar-light bg-white static-top py-2">
+
+    <div class="brand">
+      <%= active_link_to image_tag("medium_logo.png", :alt => "My Amazing Blog logo", class:"navbar-brand", style:"height: 50px"), root_path %>
+    </div>
+
+    <div class="nav-items d-flex mr-auto navbar_static_links">
+      <%= active_link_to "New article", new_article_path, class:"btn btn-light rounded-pill" %>
+    </div>
+
+    <% if user_signed_in? %>
+
+      <div class="link_personal_profile mr-2">
+        <%= active_link_to "My profile", user_path(current_user.id), class:"btn btn-light rounded-pill d-flex mx-2" %>
+      </div>
+
+      <button class="btn btn-light dropdown-toggle rounded-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+
+      <div class="dropdown-menu dropdown-menu-right text-left mr-3" aria-labelledby="dropdownMenuButton">
+
+        <div class="link_personal_profile">
+          <%= link_to "My profile", user_path(current_user.id), class:"btn btn-light rounded d-flex mx-2" %>
+        </div>
+
+        <hr/>
+
+        <div class="link_personal_settings">
+          <%= link_to edit_user_registration_path(current_user.id), class:"btn btn-light rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+            <i class="fas fa-cog mr-2"></i>
+            <span>Settings & Privacy</span>
+          <% end %>
+        </div>
+
+        <div class="link_logout">
+          <%= link_to destroy_user_session_path, method: :delete, class:"btn btn-light rounded d-flex mx-2 align-items-center", style:"height: 32px"  do %>
+            <i class="fas fa-sign-out-alt mr-2"></i>
+            <span>Log Out</span>
+          <% end %>
+        </div>
+
+      </div>
+      
+    <% else %>
+      
+      <div class="link_signup">
+        <%= active_link_to new_user_registration_path, class:"btn btn-outline-success rounded d-flex mx-2 align-items-center", style:"height: 32px" do %>
+          <span>Sign Up</span>
+        <% end %>
+      </div>
+
+      <div class="link_login">
+        <%= active_link_to new_user_session_path, class:"btn btn-outline-primary rounded d-flex mx-2 align-items-center", style:"height: 32px" do %>
+          <span>Log In</span>
+        <% end %>
+      </div>
+
+    <% end %>
+          
+  </nav>

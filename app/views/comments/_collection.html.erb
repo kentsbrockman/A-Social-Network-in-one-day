@@ -1,0 +1,18 @@
+<h4 class=my-5>Comments (<%= @comments.count%>)</h4>
+
+<% @comments.reverse.each do |comment| %>
+  <div class="card my-5">
+    <div class="card-header">
+      <h6 class="text-info">
+        <%= comment.author.email %>
+        <span class="text-muted font-italic font-weight-light ml-3"><%= comment.created_at.strftime("%B %d, %Y at %l:%M %P") %></span>
+      </h6>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= comment.content %></p>
+      <% if comment.author == current_user %>
+        <%= link_to "Edit comment", edit_article_comment_path(@article.id, comment.id), :class => "btn btn-outline-success btn-sm" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

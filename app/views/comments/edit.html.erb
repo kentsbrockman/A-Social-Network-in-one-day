@@ -1,0 +1,23 @@
+<% if alert %>
+  <div class="text-center p-3 m-3">
+    <div class="alert alert-danger" role="alert">
+      <p><%= alert %></p>
+      <ul class="list-unstyled">
+        <% @comment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<%= form_for [ @article, @comment ] do |f| %>
+  <div class="form-group">
+    <%= f.text_area :content, class: 'form-control', placeholder: 'Type your comment here', rows: '5'%>
+  </div>
+  <div class="form-group d-flex justify-content-between">
+    <%= link_to "Delete", article_comment_path(params[:article_id], params[:id]), :method => "delete", :class => "btn btn-outline-danger", :data => {:confirm => "Are you sure about that 😬?"} %>
+    <button class="btn btn-primary" type="submit">Update comment</button>
+  </div>
+<% end %>
+

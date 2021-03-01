@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Amazing Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path('medium_favicon.png') %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_pack_tag 'application' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/flash' %>
+    <main class="container my-5">
+      <%= yield %>
+    </main>
+  </body>
+</html>

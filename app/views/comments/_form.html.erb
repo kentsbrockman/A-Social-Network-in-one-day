@@ -1,0 +1,12 @@
+<div class="my-5">
+
+  <%= form_for [ @article, @comment ] do |f| %>
+    <div class="form-group">
+      <%= f.text_area :content, class: 'form-control', placeholder: 'Type your comment here', rows: '5'%>
+    </div>
+    <div class="form-group d-flex">
+      <button class="btn btn-primary ml-auto" type="submit">Add Comment</button>
+    </div>
+  <% end %>
+
+</div>
