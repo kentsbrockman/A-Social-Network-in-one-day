@@ -22,7 +22,7 @@
       <div class="dropdown-menu dropdown-menu-right text-left mr-3" aria-labelledby="dropdownMenuButton">
 
         <div class="link_personal_profile">
-          <%= active_link_to user_path(current_user.id), class:"btn btn-light rounded d-flex mx-2" do %>
+          <%= link_to user_path(current_user.id), class:"btn btn-light rounded d-flex mx-2" do %>
             <span><strong><%= current_user.first_name %></strong></span>
           <% end %>
         </div>
