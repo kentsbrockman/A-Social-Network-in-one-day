@@ -1,4 +1,4 @@
-# A Social Network in one day
+# Social Network in one day
 
 As I'm currently getting to the last part of [The Hacking Project](https://www.thehackingproject.org/) bootcamp, here's a little throwback from the good old times when I was really just discovering **Ruby on Rails**.
 
@@ -31,7 +31,7 @@ The website is directly available on [Heroku](https://a-simple-social-network.he
 
 1/ Download or clone this repository
 
-2/ `cd A-Social-Network-in-one-Day`
+2/ `cd Social-Network-in-one-Day`
 
 3/ `bundle install`
 
