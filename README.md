@@ -8,20 +8,20 @@ On top of that, the app offers the possibility of **creating content** in the fo
 
 To be honest with you, there's **a ton of things to improve here**:
 
-* I messed up with Webpacker for the deployment, so no Bootstrap, neither Fontawesome on [Heroku](https://a-simple-social-network.herokuapp.com/).
-* Overall, the design and UX are really just about okay.
-* It lacks a bunch of interesting features to be more complete (likes, visits on other profiles, tags on article, search...)
+- I messed up with Webpacker for the deployment, so no Bootstrap, neither Fontawesome on [Heroku](https://a-simple-social-network.herokuapp.com/).
+- Overall, the design and UX are really just about okay.
+- It lacks a bunch of interesting features to be more complete (likes, visits on other profiles, tags on article, search...)
 
-But hey, interestingly enough, **I've coded in one day** what would've been one week of work a few months back. So I feel grateful for the progress here 😊
+But hey, interestingly enough, **I've coded in one day** what would have been one week of work a few months back (cf. [The Gossip Project](https://github.com/kentsbrockman/The-Gossip-Project)). So, I am satisfied with the progress here 😊
 
 ---
 
 ## Features
 
-* A robust data management for the **3 models available**: users, articles and comments.
-* A secured **authentication** through a Devise plugging.
-* A trial by fire of a **Rails Scaffold** for the articles management.
-* A seed of data to have content available straight away.
+- A robust data management for the **3 models available**: users, articles and comments.
+- A secured **authentication** through a Devise plugging.
+- A trial by fire of a **Rails Scaffold** for the articles management.
+- A seed of data to have content available straight away.
 
 ---
 
