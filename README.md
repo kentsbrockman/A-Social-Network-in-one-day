@@ -29,11 +29,9 @@ But hey, interestingly enough, **I've coded in one day** what would've been one 
 
 The website is directly available on [Heroku](https://a-simple-social-network.herokuapp.com/), even though it lacks Bootstrap and Fontawesome pluggings. Otherwise, you can run it locally by following these steps:
 
-1/ Get the resource:
-  - Download the repository
-  - OR `git clone https://github.com/kentsbrockman/A-simple-social-network-in-one-day`
+1/ Download or clone this repository
 
-2/ `cd my_amazing_blog`
+2/ `cd A-Social-Network-in-one-Day`
 
 3/ `bundle install`
 
